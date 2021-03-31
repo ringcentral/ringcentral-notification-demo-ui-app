@@ -10,7 +10,7 @@ Created with [glip-integration-js](https://github.com/ringcentral/glip-integrati
 - Download and install RingCentral app and login: https://www.ringcentral.com/apps/rc-app
 - Nodejs 8.10+/npm, recommend using [nvm](https://github.com/creationix/nvm) to install nodejs/npm.
 - If you want to create RingCentral Glip integration that can show in RingCentral Glip apps list, you need a RingCentral developer account that can create Glip integration: you need [sign up](https://developers.ringcentral.com/) and apply for the permission to create Glip integration.
-- Need a paid account that can login to [app.ringcentral.com](https://app.ringcentral.com)
+- Need a account that can login to [app.ringcentral.com](https://app.ringcentral.com)
 
 ## Quick start
 

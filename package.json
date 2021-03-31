@@ -53,6 +53,7 @@
     "ngrok": "^3.4.1",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "query-string": "^5.1.1",
+    "ringcentral-notification-integration-helper": "^0.3.0",
     "serverless": "^2.31.0",
     "serverless-deployment-bucket": "^1.4.0",
     "shelljs": "^0.8.4",

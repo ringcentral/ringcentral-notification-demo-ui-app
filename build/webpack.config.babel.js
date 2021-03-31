@@ -31,7 +31,7 @@ const config = {
     'react-dom': 'ReactDOM'
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.json']
+    extensions: ['.js', '.jsx', '.json']
   },
   output: {
     path: resolve(__dirname, '../deploy/dist/static'),

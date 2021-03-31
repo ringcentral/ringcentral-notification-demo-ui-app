@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import { Form, Button, Input, InputNumber } from 'antd'
-import { MESSAGE_CHANNEL } from './common/constants'
-import { PostMessageApp } from './common/post-message'
+import { Form, Button, Input } from 'antd'
+import { RingCentralNotificationIntegrationHelper } from 'ringcentral-notification-integration-helper'
 import qs from 'query-string'
 
 const FormItem = Form.Item
@@ -28,23 +27,24 @@ export default function Options () {
     webhook: q.webhook || ''
   }
   function onFinish (res) {
-    window.axios.post(
+    return window.axios.post(
       window.rc.server + '/api/action',
       res
     )
   }
-  function nofitfyCanSubmit (status) {
-    ref.current.send(MESSAGE_CHANNEL.oauth, { status })
+  function nofitfyCanSubmit (canSubmit) {
+    ref.current.send({ canSubmit })
   }
   function onChange () {
     const values = form.getFieldsValue(true)
     console.log('values', values)
     nofitfyCanSubmit(!!(values.msg && values.webhook))
   }
-  function submit () {
-    form.submit()
+  async function submit () {
+    const values = form.getFieldsValue(true)
+    await onFinish(values)
     return {
-      status: false
+      status: true
     }
   }
   function auth () {
@@ -58,8 +58,8 @@ export default function Options () {
   }
   function init () {
     window.addEventListener('message', onAuthCallack)
-    ref.current = new PostMessageApp()
-    ref.current.handle(MESSAGE_CHANNEL.submitted, submit)
+    ref.current = new RingCentralNotificationIntegrationHelper()
+    ref.current.on('submit', submit)
   }
   useEffect(() => {
     init()

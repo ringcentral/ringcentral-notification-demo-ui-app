@@ -3,7 +3,7 @@
 
 A demo integration(notification app) for RingCentral desktop/web app, as a demo, shows you how to create a notification app with UI to config for RingCentral.
 
-Created with [glip-integration-js](https://github.com/ringcentral/glip-integration-js)
+Created with [notification-app-js](https://github.com/ringcentral/notification-app-js)
 
 ## DEV Prerequisites
 
